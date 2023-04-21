@@ -1,4 +1,4 @@
-const getTodayDDMMYY = (): string => {
+export const getTodayDDMMYY = (): string => {
     const epoch = Date.now()
     console.log(epoch)
     // 
