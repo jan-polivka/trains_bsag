@@ -12,7 +12,6 @@ fastify.get('/', (req, res) => {
 
 fastify.get('/trains', async (req, res) => {
     let stations = await stationGet()
-    // console.log(stations)
     fs.writeFile('/workspaces/ubuntu-6/trains_service/backend/stations.json', JSON.stringify(stations), err => {
         if (err)
             console.log(err)
@@ -30,7 +29,6 @@ fastify.get('/station', async (req, res) => {
 
 fastify.get('/connection', async (req, res) => {
     let connection = await connectionGet()
-    // console.log(connection)
     res.send(connection)
 })
 
