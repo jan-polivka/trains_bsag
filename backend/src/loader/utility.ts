@@ -3,7 +3,7 @@ export const getTodayDDMMYY = (): string => {
     console.log(epoch)
     const dateObj = new Date(epoch)
     console.log(dateObj)
-    console.log("hi")
+    console.log("hellop")
     // 
     return epoch.toString()
 }
