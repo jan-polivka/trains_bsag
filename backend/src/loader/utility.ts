@@ -1,7 +1,7 @@
 export const getTodayDDMMYY = (): string => {
     const epoch = Date.now()
     console.log(epoch)
-    const dateObj = new Date(epoch)
+    const dateObj = new Date()
     console.log(dateObj.getDate())
     console.log(dateObj.getDay())
     console.log(dateObj.getMonth())
