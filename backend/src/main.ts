@@ -4,7 +4,7 @@ import { connectionGet, stationGet } from './loader/loader'
 import * as fs from 'fs'
 import * as fileHandle from 'fs/promises'
 import { loadConfig, sendMail } from './mailer/mailer'
-import { isConnectionCancelled, isConnectionDelayed } from './connection_processor/connection_processor'
+import { extractZerothConnection, isConnectionCancelled, isConnectionDelayed } from './connection_processor/connection_processor'
 
 const fastify = Fastify({ logger: true })
 
@@ -37,8 +37,9 @@ fastify.get('/connection', async (req, res) => {
 fastify.get('/mail', async (req, res) => {
     let config = await loadConfig('config_default.yaml')
     // how do we know, that a train is happening?
-    // const connection = await connectionGet()
-    // const isConnectionOK = isConnectionCancelled(connection) && isConnectionDelayed(connection)
+    const connections = await connectionGet()
+    const zerothConnection = extractZerothConnection(connections)
+    const isConnectionOK = isConnectionCancelled(zerothConnection) && isConnectionDelayed(zerothConnection)
     let mailRes = await sendMail(config, false)
     res.send("go away")
 })
