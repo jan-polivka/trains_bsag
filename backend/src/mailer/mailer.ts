@@ -26,5 +26,5 @@ export const loadConfig = async (filename: string) => {
     const file = await fs.promises.readFile(path)
     console.log(file.toString())
     let res = yaml.load(file.toString())
-    console.log(res["auth"])
+    console.log(res)
 }
