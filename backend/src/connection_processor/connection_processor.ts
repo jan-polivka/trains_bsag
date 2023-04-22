@@ -3,5 +3,5 @@ export const isConnectionCancelled = (): boolean => {
 }
 
 export const extractZerothConnection = (connections: Connections) => {
-
+    const connection: Connection = connections.connection.at(0)
 }
