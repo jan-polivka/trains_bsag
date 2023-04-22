@@ -17,4 +17,5 @@ export const loadConfig = async (filename: string) => {
     console.log(path)
     const file = await fs.promises.readFile(path)
     yaml.load(file)
+    console.log(yaml)
 }
