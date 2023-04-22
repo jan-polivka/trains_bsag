@@ -2,5 +2,6 @@
 host: smtp.fakeserver.org
 port: 587
 secure: false
-user: postmaster@123456.fakeserver.org
-pass: 7890
+auth:
+  user: postmaster@123456.fakeserver.org
+  pass: 7890
