@@ -16,11 +16,11 @@ export async function stationGet() {
     return resp
 }
 
-export async function connectionGet(): Promise<Response> {
+export async function connectionGet(): Promise<Connections> {
     const date = getTodayDDMMYY(new Date())
     const api = 'connections?from=BE.NMBS.008821600&to=BE.NMBS.008821006&format=json&time=0730&date=' + date
     let resp = await fetch(url + api, options)
-    resp = await resp.json()
+    let connections: Connections = await resp.json()
     console.log(typeof resp)
-    return resp
+    return connections
 }
