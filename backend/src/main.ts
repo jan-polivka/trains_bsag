@@ -36,6 +36,7 @@ fastify.get('/connection', async (req, res) => {
 fastify.get('/mail', async (req, res) => {
     let config = await loadConfig('config_default')
     let mailRes = await sendMail(config, true)
+    res.send("go away")
 })
 
 fastify.listen({ port: 8080 }, () => {
