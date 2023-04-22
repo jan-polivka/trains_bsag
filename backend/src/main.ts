@@ -35,7 +35,7 @@ fastify.get('/connection', async (req, res) => {
 
 fastify.get('/mail', async (req, res) => {
     let config = await loadConfig('config_default.yaml')
-    let mailRes = await sendMail(config, true)
+    let mailRes = await sendMail(config, false)
     res.send("go away")
 })
 
