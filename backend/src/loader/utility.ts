@@ -1,15 +1,7 @@
 export const getTodayDDMMYY = (): string => {
-    const epoch = Date.now()
-    console.log(epoch)
     const dateObj = new Date()
-    console.log(dateObj.getDate())
-    console.log(dateObj.getMonth())
-    console.log(dateObj.getFullYear())
-    console.log("hi")
-    // 
     const dateMonth = (dateObj.getMonth() + 1).toString()
     const month = parseInt(dateMonth) < 10 ? "0" + dateMonth : dateMonth
     const year = dateObj.getFullYear().toString().slice(-2)
-    console.log(year)
     return dateObj.getDate().toString() + month + year
 }
