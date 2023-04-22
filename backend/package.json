@@ -16,6 +16,7 @@
   "license": "MIT",
   "description": "",
   "dependencies": {
+    "@types/js-yaml": "^4.0.5",
     "fastify": "^4.15.0",
     "js-yaml": "^4.1.0"
   }
