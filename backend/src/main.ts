@@ -3,6 +3,7 @@ import { REPL_MODE_SLOPPY } from 'repl'
 import { connectionGet, stationGet } from './loader/loader'
 import * as fs from 'fs'
 import * as fileHandle from 'fs/promises'
+import { loadConfig, sendMail } from './mailer/mailer'
 
 const fastify = Fastify({ logger: true })
 
@@ -33,7 +34,8 @@ fastify.get('/connection', async (req, res) => {
 })
 
 fastify.get('/mail', async (req, res) => {
-    // let mailRes = await 
+    let config = await loadConfig('config_default')
+    let mailRes = await sendMail(config, true)
 })
 
 fastify.listen({ port: 8080 }, () => {
