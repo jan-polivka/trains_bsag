@@ -39,4 +39,5 @@ export const sendMail = async (config: MailerConfig, isTrainOK: boolean) => {
         to: `${config.email}`,
         subject: subject
     })
+    console.log(info)
 }
