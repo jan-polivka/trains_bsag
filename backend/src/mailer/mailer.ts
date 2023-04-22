@@ -7,10 +7,7 @@ class MailerConfig {
     host: string
     port: number
     secure: boolean
-    auth: {
-        user: string
-        pass: string
-    }
+    auth: Auth
 
     constructor(parsedYaml: any) {
         this.host = parsedYaml["host"] ? parsedYaml["host"] : null
@@ -19,6 +16,11 @@ class MailerConfig {
         // this.auth.user = parsedYaml["auth"]["user"] ? parsedYaml["auth"]["user"] : null
         // this.auth.pass = parsedYaml["auth"]["pass"] ? parsedYaml["auth"]["pass"] : null
     }
+}
+
+type Auth = {
+    user: string
+    pass: string
 }
 
 export const loadConfig = async (filename: string) => {
