@@ -1,6 +1,7 @@
 import * as fs from 'fs'
 import * as yaml from 'js-yaml'
 import { cwd } from 'process'
+import * as nodemailer from 'nodemailer'
 
 class MailerConfig {
     host: string
@@ -27,5 +28,6 @@ export const loadConfig = async (filename: string) => {
     console.log(file.toString())
     let res = yaml.load(file.toString())
     let config = new MailerConfig(res)
+    let transporter = nodemailer.createTransport(config)
     console.log(res)
 }
