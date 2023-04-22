@@ -21,6 +21,5 @@ export async function connectionGet(): Promise<Connections> {
     const api = 'connections?from=BE.NMBS.008821600&to=BE.NMBS.008821006&format=json&time=0730&date=' + date
     let resp = await fetch(url + api, options)
     let connections: Connections = await resp.json()
-    console.log(typeof resp)
     return connections
 }
