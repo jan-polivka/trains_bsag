@@ -12,7 +12,7 @@ class MailerConfig {
     }
 
     constructor(parsedYaml: any) {
-        // this.host = parsedYaml["host"] ? parsedYaml["host"] : null
+        this.host = parsedYaml["host"] ? parsedYaml["host"] : null
         // this.port = parsedYaml["port"] ? parsedYaml["port"] : null
         // this.secure = parsedYaml["secure"] ? parsedYaml["secure"] : null
         // this.auth.user = parsedYaml["auth"]["user"] ? parsedYaml["auth"]["user"] : null
