@@ -11,5 +11,5 @@ export const getTodayDDMMYY = (): string => {
     const month = parseInt(dateMonth) < 10 ? "0" + dateMonth : dateMonth
     const year = dateObj.getFullYear().toString().slice(-2)
     console.log(year)
-    return dateObj.getDate().toString() + month
+    return dateObj.getDate().toString() + month + year
 }
