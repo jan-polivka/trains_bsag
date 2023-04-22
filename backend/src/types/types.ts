@@ -1,8 +1,8 @@
-type Connections = {
+export type Connections = {
     connection: Connection[]
 }
 
-type Connection = {
+export type Connection = {
     id: string
     departure: {
         delay: string

@@ -1,5 +1,6 @@
 import { appendFile } from "fs"
 import { getTodayDDMMYY } from "./utility"
+import { Connections } from "../types/types"
 
 const options = {
     headers: {

@@ -38,8 +38,9 @@ fastify.get('/mail', async (req, res) => {
     let config = await loadConfig('config_default.yaml')
     const connections = await connectionGet()
     const zerothConnection = extractZerothConnection(connections)
+    console.log(zerothConnection)
     const isConnectionOK = isConnectionCancelled(zerothConnection) && isConnectionDelayed(zerothConnection)
-    let mailRes = await sendMail(config, isConnectionOK)
+    // let mailRes = await sendMail(config, isConnectionOK)
     res.send("go away")
 })
 

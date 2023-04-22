@@ -1,3 +1,5 @@
+import { Connection, Connections } from "../types/types"
+
 export const isConnectionCancelled = (connection: Connection): boolean => {
     return connection.departure.canceled !== "0" ? true : false
 }

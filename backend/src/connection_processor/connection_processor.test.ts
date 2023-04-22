@@ -3,6 +3,7 @@ import { test } from "node:test";
 import { extractZerothConnection, isConnectionCancelled, isConnectionDelayed } from "./connection_processor";
 import assert = require("node:assert");
 import { cwd } from "node:process";
+import { Connection, Connections } from '../types/types';
 
 test("connection is not cancelled", () => {
     const connection: Connection = { id: "0", departure: { canceled: "0", delay: "0", time: "123" } }
