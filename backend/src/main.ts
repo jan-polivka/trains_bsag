@@ -36,7 +36,6 @@ fastify.get('/connection', async (req, res) => {
 
 fastify.get('/mail', async (req, res) => {
     let config = await loadConfig('config_default.yaml')
-    // how do we know, that a train is happening?
     const connections = await connectionGet()
     const zerothConnection = extractZerothConnection(connections)
     const isConnectionOK = isConnectionCancelled(zerothConnection) && isConnectionDelayed(zerothConnection)
