@@ -12,6 +12,16 @@ class MailerConfig {
     }
 }
 
+type MailerConfigType = {
+    host: string
+    port: number
+    secure: boolean
+    auth: {
+        user: string
+        pass: string
+    }
+}
+
 export const loadConfig = async (filename: string) => {
     const path = `${cwd()}/config/${filename}`
     console.log(path)
