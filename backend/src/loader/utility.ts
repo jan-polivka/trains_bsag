@@ -7,5 +7,7 @@ export const getTodayDDMMYY = (): string => {
     console.log(dateObj.getFullYear())
     console.log("hi")
     // 
+    const dateMonth = (dateObj.getMonth() + 1).toString()
+    const month = parseInt(dateMonth) < 10 ? "0" + dateMonth : dateMonth
     return dateObj.getDay().toString()
 }
