@@ -5,7 +5,8 @@ import assert = require("node:assert");
 import { cwd } from "node:process";
 
 test("connection is not cancelled", () => {
-    const result = isConnectionCancelled()
+    const connection: Connection = { id: "0", departure: { canceled: "0", delay: "0", time: "123" } }
+    const result = isConnectionCancelled(connection)
     assert.equal(result, false)
 })
 
@@ -14,4 +15,5 @@ test("extract the zeroth connection", () => {
     const file = fs.readFileSync(path)
     const parsed: Connections = JSON.parse(file.toString())
     const connection = extractZerothConnection(parsed)
+    assert.equal(connection.id, "0")
 })

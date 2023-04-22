@@ -1,4 +1,4 @@
-export const isConnectionCancelled = (): boolean => {
+export const isConnectionCancelled = (connections: Connection): boolean => {
     return false
 }
 
