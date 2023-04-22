@@ -31,8 +31,8 @@ export const loadConfig = async (filename: string): Promise<MailerConfig> => {
     return new MailerConfig(parsedYaml)
 }
 
-export const sendMail = async (config: MailerConfig, isTrainOK: boolean) => {
-    const subject = isTrainOK ? "ALL GOOD, CHIEF" : "IT'S A NO GO, CHIEF"
+export const sendMail = async (config: MailerConfig, isConnectionBorked: boolean) => {
+    const subject = isConnectionBorked ? "IT'S A NO GO, CHIEF" : "ALL GOOD, CHIEF"
     const transporter = nodemailer.createTransport(config)
     let info = await transporter.sendMail({
         from: `'Train Bot' <${config.auth.user}>`,
