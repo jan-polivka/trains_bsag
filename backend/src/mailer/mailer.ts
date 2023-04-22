@@ -32,5 +32,7 @@ export const loadConfig = async (filename: string): Promise<MailerConfig> => {
 export const sendMail = async (config: MailerConfig, isTrainOK: boolean) => {
     const subject = isTrainOK ? "ALL GOOD, CHIEF" : "IT'S A NO GO, CHIEF"
     const transporter = nodemailer.createTransport(config)
-    // let info = await 
+    let info = await transporter.sendMail({
+        from: `'Train Bot' <`
+    })
 }
