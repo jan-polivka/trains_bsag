@@ -7,5 +7,5 @@ export const getTodayDDMMYY = (): string => {
     console.log(dateObj.getFullYear())
     console.log("hi")
     // 
-    return epoch.toString()
+    return dateObj.getDay().toString()
 }
