@@ -38,7 +38,7 @@ fastify.get('/mail', async (req, res) => {
     let config = await loadConfig('config_default.yaml')
     const connections = await connectionGet()
     const zerothConnection = extractZerothConnection(connections)
-    const isConnectionOK = isConnectionCancelled(zerothConnection) && isConnectionDelayed(zerothConnection)
+    const isConnectionBorked = isConnectionCancelled(zerothConnection) && isConnectionDelayed(zerothConnection)
     // let mailRes = await sendMail(config, isConnectionOK)
     console.log(isConnectionCancelled(zerothConnection))
     console.log(isConnectionDelayed(zerothConnection))
