@@ -1,4 +1,5 @@
 import { appendFile } from "fs"
+import { getTodayDDMMYY } from "./utility"
 
 const options = {
     headers: {
@@ -16,6 +17,7 @@ export async function stationGet() {
 }
 
 export async function connectionGet() {
+    const date = getTodayDDMMYY(new Date())
     const api = 'connections?from=BE.NMBS.008821600&to=BE.NMBS.008821006&format=json'
     let resp = await fetch(url + api, options)
     resp = await resp.json()
