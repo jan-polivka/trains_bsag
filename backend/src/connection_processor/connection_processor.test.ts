@@ -22,6 +22,12 @@ test("connection is not delayed", () => {
     assert.equal(result, false)
 })
 
+test("connection is delayed", () => {
+    const connection: Connection = { id: "0", departure: { canceled: "0", delay: "2", time: "123" } }
+    const result = isConnectionDelayed(connection)
+    assert.equal(result, true)
+})
+
 test("extract the zeroth connection", () => {
     const path = `${cwd()}/resources/test/connection.json`
     const file = fs.readFileSync(path)

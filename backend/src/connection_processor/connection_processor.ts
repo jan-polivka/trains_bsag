@@ -3,7 +3,7 @@ export const isConnectionCancelled = (connection: Connection): boolean => {
 }
 
 export const isConnectionDelayed = (connection: Connection): boolean => {
-    return false
+    return parseInt(connection.departure.delay) > 0 ? true : false
 }
 
 export const extractZerothConnection = (connections: Connections): Connection => {
