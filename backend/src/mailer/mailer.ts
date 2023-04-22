@@ -15,4 +15,5 @@ export const loadConfig = async (filename: string) => {
     const path = `${cwd()}/config/${filename}`
     console.log(path)
     const file = await fs.promises.readFile(path)
+    console.log(file)
 }
