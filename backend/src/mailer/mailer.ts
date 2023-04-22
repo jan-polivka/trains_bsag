@@ -1,3 +1,6 @@
+import * as fs from 'fs'
+import { cwd } from 'process'
+
 class MailerConfig {
     host: string
     port: number
@@ -9,5 +12,5 @@ class MailerConfig {
 }
 
 export const loadConfig = (filename: string) => {
-
+    console.log(cwd())
 }
