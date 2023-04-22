@@ -13,5 +13,5 @@ test("extract the zeroth connection", () => {
     const path = `${cwd()}/resources/test/connection.json`
     const file = fs.readFileSync(path)
     const parsed: Connections = JSON.parse(file.toString())
-    extractZerothConnection(parsed)
+    const connection = extractZerothConnection(parsed)
 })
