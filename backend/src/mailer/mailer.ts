@@ -12,5 +12,5 @@ class MailerConfig {
 }
 
 export const loadConfig = (filename: string) => {
-    console.log(cwd())
+    console.log(cwd() + "/config")
 }
