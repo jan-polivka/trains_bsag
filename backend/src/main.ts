@@ -32,6 +32,10 @@ fastify.get('/connection', async (req, res) => {
     res.send(connection)
 })
 
+fastify.get('/mail', async (req, res) => {
+    // let mailRes = await 
+})
+
 fastify.listen({ port: 8080 }, () => {
     console.log("doing the listen")
 })
