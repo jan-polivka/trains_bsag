@@ -5,5 +5,5 @@ import { getTodayDDMMYY } from "./utility";
 test("getTodayDDMMYY returns today's date as DDMMYY", () => {
     const res = getTodayDDMMYY()
     ///
-    assert.strictEqual("22", "22")
+    assert.strictEqual(res, "22")
 })
