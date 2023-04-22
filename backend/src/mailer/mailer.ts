@@ -33,6 +33,6 @@ export const loadConfig = async (filename: string) => {
     let res = yaml.load(file.toString())
     let config = new MailerConfig(res)
     let transporter = nodemailer.createTransport(config)
-    console.log(transporter)
+    console.log(config.secure)
     console.log(res)
 }
