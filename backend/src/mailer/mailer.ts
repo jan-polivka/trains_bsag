@@ -27,5 +27,4 @@ export const loadConfig = async (filename: string) => {
     const file = await fs.promises.readFile(path)
     let res = yaml.load(file.toString())
     let config = new MailerConfig(res)
-    let transporter = nodemailer.createTransport(config)
 }
