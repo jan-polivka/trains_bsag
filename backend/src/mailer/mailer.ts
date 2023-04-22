@@ -28,3 +28,5 @@ export const loadConfig = async (filename: string): Promise<MailerConfig> => {
     const parsedYaml = yaml.load(file.toString())
     return new MailerConfig(parsedYaml)
 }
+
+// export const sendMail = async ()
