@@ -10,7 +10,6 @@ test("connection is not cancelled", () => {
     assert.equal(result, false)
 })
 
-
 test("connection is cancelled", () => {
     const connection: Connection = { id: "0", departure: { canceled: "1", delay: "0", time: "123" } }
     const result = isConnectionCancelled(connection)
