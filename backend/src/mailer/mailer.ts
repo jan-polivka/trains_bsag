@@ -1,4 +1,5 @@
 import * as fs from 'fs'
+import * as yaml from 'js-yaml'
 import { cwd } from 'process'
 
 class MailerConfig {
