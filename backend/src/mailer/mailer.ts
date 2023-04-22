@@ -8,12 +8,14 @@ class MailerConfig {
     port: number
     secure: boolean
     auth: Auth
+    email: string
 
     constructor(parsedYaml: any) {
         this.host = parsedYaml["host"]
         this.port = parsedYaml["port"]
         this.secure = parsedYaml["secure"]
         this.auth = parsedYaml["auth"]
+        this.email = parsedYaml["email"]
     }
 }
 
