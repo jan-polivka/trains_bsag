@@ -29,4 +29,6 @@ export const loadConfig = async (filename: string): Promise<MailerConfig> => {
     return new MailerConfig(parsedYaml)
 }
 
-// export const sendMail = async ()
+export const sendMail = async (config: MailerConfig, isTrainOK: boolean) => {
+
+}
