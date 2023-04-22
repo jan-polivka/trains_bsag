@@ -34,5 +34,4 @@ export const loadConfig = async (filename: string) => {
     let config = new MailerConfig(res)
     let transporter = nodemailer.createTransport(config)
     console.log(config.secure)
-    console.log(res)
 }
