@@ -41,7 +41,7 @@ fastify.get('/mail', async (req, res) => {
     console.log(zerothConnection)
     const isConnectionOK = isConnectionCancelled(zerothConnection) && isConnectionDelayed(zerothConnection)
     // let mailRes = await sendMail(config, isConnectionOK)
-    res.send("go away")
+    res.send(zerothConnection)
 })
 
 fastify.listen({ port: 8080 }, () => {
