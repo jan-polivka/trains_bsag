@@ -9,5 +9,6 @@ export const getTodayDDMMYY = (): string => {
     // 
     const dateMonth = (dateObj.getMonth() + 1).toString()
     const month = parseInt(dateMonth) < 10 ? "0" + dateMonth : dateMonth
+    console.log(month)
     return dateObj.getDay().toString()
 }
