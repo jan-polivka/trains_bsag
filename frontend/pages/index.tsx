@@ -1,5 +1,5 @@
 import Grid2 from "@mui/material/Unstable_Grid2"
-import { SubscribeForm } from "../src/SubscribeForm"
+import { SubscribeForm } from "../src/SubscribeForm/SubscribeForm"
 
 const homePage = (): any => {
     return (
