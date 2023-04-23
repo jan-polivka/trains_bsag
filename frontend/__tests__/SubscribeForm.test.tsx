@@ -1,9 +1,8 @@
-import { fireEvent, render, screen } from '@testing-library/react'
-import Home from '../pages/index'
-import { SubscribeForm } from '../src/SubscribeForm/SubscribeForm'
 import '@testing-library/jest-dom'
-import { submitTimeString } from '../src/SubscribeForm/submitTimeString'
+import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import { SubscribeForm } from '../src/SubscribeForm/SubscribeForm'
+import { submitTimeString } from '../src/SubscribeForm/submitTimeString'
 
 describe('SubscribeForm', () => {
     it('irenders the subscribe form', async () => {
