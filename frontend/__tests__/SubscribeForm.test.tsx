@@ -11,7 +11,7 @@ describe('SubscribeForm', () => {
         const mockSubmitTimeString = jest.fn()
         render(<SubscribeForm submitTimeString={submitTimeString} />)
         await user.type(screen.getByTestId("time-input"), "test")
-        // await user.click(screen.getByLabelText("submit-button"))
+        await user.click(screen.getByTestId("submit-button"))
         // expect(mockSubmitTimeString).lastCalledWith("test")
     })
 })

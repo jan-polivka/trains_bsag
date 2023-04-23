@@ -18,7 +18,7 @@ export const SubscribeForm = (props: { submitTimeString: (timeString: string) =>
                 <TextField data-testid="time-input" variant="outlined" onChange={(data) => setTimeString(data.target.value)} />
             </Grid2>
             <Grid2 xs={12}>
-                <Button onClick={() => props.submitTimeString(timeString)}>Submit</Button>
+                <Button data-testid="submit-button" onClick={() => props.submitTimeString(timeString)}>Submit</Button>
             </Grid2>
         </Grid2>
     )
