@@ -1,5 +1,6 @@
 import Grid2 from "@mui/material/Unstable_Grid2"
 import { SubscribeForm } from "../src/SubscribeForm/SubscribeForm"
+import { submitTimeString } from "../src/SubscribeForm/submitTimeString"
 
 const homePage = (): any => {
     return (
@@ -8,7 +9,7 @@ const homePage = (): any => {
                 Hello world!
             </Grid2>
             <Grid2 xs={"auto"}>
-                {/* <SubscribeForm /> */}
+                <SubscribeForm submitTimeString={submitTimeString} />
             </Grid2>
         </Grid2>
     )
