@@ -8,7 +8,7 @@ const homePage = (): any => {
                 Hello world!
             </Grid2>
             <Grid2 xs={"auto"}>
-                <SubscribeForm />
+                {/* <SubscribeForm /> */}
             </Grid2>
         </Grid2>
     )
