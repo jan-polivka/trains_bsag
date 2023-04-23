@@ -12,6 +12,7 @@ describe('SubscribeForm', () => {
         const timeInput = screen.getByTestId("time-input")
         await user.type(timeInput, "test")
         await user.click(screen.getByTestId("submit-button"))
+        console.log(timeInput)
         // expect(timeInput).toHaveValue("test")
         // expect(mockSubmitTimeString).lastCalledWith("test")
     })
