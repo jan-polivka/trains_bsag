@@ -6,9 +6,6 @@ export const SubscribeForm = (props: { submitTimeString: (timeString: string) =>
 
     const [timeString, setTimeString] = useState("")
 
-
-
-
     return (
         <Grid2 container>
             <Grid2 xs={"auto"}>
