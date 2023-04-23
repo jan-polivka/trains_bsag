@@ -7,6 +7,6 @@ describe('SubscribeForm', () => {
     it('renders the subscribe form', () => {
         render(<SubscribeForm />)
 
-        expect(screen.getByText('Enter time in the format HHMM:XW')).toBeInTheDocument()
+        expect(screen.getByText('Enter time in the format HHMM:')).toBeInTheDocument()
     })
 })
