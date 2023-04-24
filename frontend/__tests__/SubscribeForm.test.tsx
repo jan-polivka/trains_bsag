@@ -8,7 +8,7 @@ describe('SubscribeForm', () => {
         const user = userEvent.setup()
         const mockSubmitTimeString = jest.fn()
         render(<SubscribeForm submitTimeString={mockSubmitTimeString} />)
-        const timeInput = screen.getByRole("textbox")
+        const timeInput = screen.getByLabelText("time-input")
         // const timeInput = screen.getByTestId("time-input")
         await user.type(timeInput, "test")
         await user.click(screen.getByRole("button"))
