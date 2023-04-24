@@ -13,7 +13,6 @@ describe('SubscribeForm', () => {
         await user.click(screen.getByLabelText("submit-time-input"))
         expect(timeInput).toHaveValue("test")
         expect(mockSubmitTimeString).lastCalledWith("test")
-        // expect(screen.getByTestId("time-input")).toHaveValue("test")
     })
 })
 
