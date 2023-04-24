@@ -1,3 +1,3 @@
-export const submitTimeString = (timeString: string) => {
+export const submitTimeString = async (timeString: string) => {
 
 }

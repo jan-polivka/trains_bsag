@@ -12,8 +12,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest",
-    "tcr": "jest && git commit -am \"working\" || git reset --hard"
+    "test": "jest unit",
+    "integration": "jest int",
+    "tcr": "jest unit && git commit -am \"working\" || git reset --hard"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
