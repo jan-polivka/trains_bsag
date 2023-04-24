@@ -15,7 +15,7 @@ export const SubscribeForm = (props: { submitTimeString: (timeString: string) =>
                 <TextField inputProps={{ 'aria-label': 'time-input' }} variant="outlined" value={timeString} onChange={(data) => setTimeString(data.target.value)} />
             </Grid2>
             <Grid2 xs={12}>
-                <Button data-testid="submit-button" onClick={() => props.submitTimeString(timeString)}>Submit</Button>
+                <Button aria-label="submit-time-input" onClick={() => props.submitTimeString(timeString)}>Submit</Button>
             </Grid2>
         </Grid2>
     )
