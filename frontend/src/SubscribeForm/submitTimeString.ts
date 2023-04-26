@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+import fetch from "node-fetch"
 
 export const submitTimeString = async (timeString: string): Promise<number> => {
     let response = await fetch("localhost:8080/submit_time_string", {
