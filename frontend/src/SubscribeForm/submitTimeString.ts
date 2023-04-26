@@ -2,12 +2,7 @@ const axios = require('axios');
 
 export const submitTimeString = async (timeString: string): Promise<number> => {
     let response = await axios.post("http://127.0.0.1:8080/submit_time_string", {
-        timeString
-    }, {
-        headers: {
-            'Content-Type': 'text/plain'
-        }
-
+        timeString: timeString
     })
     return response
 }
