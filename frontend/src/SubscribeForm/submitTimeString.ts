@@ -1,7 +1,7 @@
 export const submitTimeString = async (timeString: string): Promise<number> => {
-    fetch("localhost:8080", {
+    let response = await fetch("localhost:8080", {
         method: "POST",
         body: timeString
     })
-    return 200
+    return response.status
 }
