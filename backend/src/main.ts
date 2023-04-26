@@ -44,7 +44,9 @@ fastify.get('/mail', async (req, res) => {
 })
 
 fastify.post('/submit_time_string', async (req, res) => {
-    res.send(200)
+    const parsed = +req.body["timeString"]
+    const resp = Number.isNaN(parsed) ? "NOT OK" : "OK"
+    res.send(resp)
 })
 
 fastify.listen({ port: 8080 }, () => {
