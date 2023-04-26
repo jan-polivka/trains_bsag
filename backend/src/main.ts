@@ -43,6 +43,10 @@ fastify.get('/mail', async (req, res) => {
     res.send(zerothConnection)
 })
 
+fastify.post('/submit_time_string', async (req, res) => {
+    res.send(200)
+})
+
 fastify.listen({ port: 8080 }, () => {
     console.log("doing the listen")
 })
