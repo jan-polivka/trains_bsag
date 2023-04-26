@@ -16,6 +16,7 @@
   "license": "MIT",
   "description": "",
   "dependencies": {
+    "@fastify/cors": "^8.2.1",
     "@types/js-yaml": "^4.0.5",
     "@types/nodemailer": "^6.4.7",
     "fastify": "^4.15.0",

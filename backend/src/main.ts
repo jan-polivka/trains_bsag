@@ -1,4 +1,5 @@
 import Fastify from 'fastify'
+import cors from '@fastify/cors'
 import { REPL_MODE_SLOPPY } from 'repl'
 import { connectionGet, stationGet } from './loader/loader'
 import * as fs from 'fs'
@@ -7,6 +8,8 @@ import { loadConfig, sendMail } from './mailer/mailer'
 import { extractZerothConnection, isConnectionCancelled, isConnectionDelayed } from './connection_processor/connection_processor'
 
 const fastify = Fastify({ logger: true })
+
+fastify.register(cors)
 
 fastify.get('/', (req, res) => {
     res.send({ hello: 'world' })
