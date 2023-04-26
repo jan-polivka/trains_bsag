@@ -1,4 +1,5 @@
 const axios = require('axios');
+const adapter = require('axios/lib/adapters/http')
 
 
 export const submitTimeString = async (timeString: string): Promise<number> => {
