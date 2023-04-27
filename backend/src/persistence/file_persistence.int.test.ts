@@ -28,11 +28,11 @@ test("retrieval fails", async () => {
     const parsedYaml = await loadConfig("config_test.yaml")
     const filePath = parsedYaml['file']
     // try {
-    let res = await retrieveFromFile(filePath)
-    console.log(res)
+    // let res = await retrieveFromFile(filePath)
+    // console.log(res)
     // } catch (e) {
     //     console.log(e)
     //     expect(e).toThrowError(typeof Error)
     // }
-    // expect(async () => await retrieveFromFile(filePath)).toThrow()
+    expect(async () => await retrieveFromFile(filePath)).toThrow()
 })

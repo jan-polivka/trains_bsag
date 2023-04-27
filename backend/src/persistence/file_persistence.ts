@@ -9,7 +9,7 @@ export const persistInFile = async (timeString: string, filepath: string) => {
 export const retrieveFromFile = async (filepath: string): Promise<string> => {
     const timeStringFile = await readFile(filepath, "utf-8")
     if (typeof timeStringFile === typeof Error)
-        throw timeStringFile
+        throw new Error()
     console.log(timeStringFile)
     return JSON.parse(timeStringFile)['timeString']
 }
