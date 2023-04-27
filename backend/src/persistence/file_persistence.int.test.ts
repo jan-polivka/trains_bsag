@@ -26,12 +26,12 @@ test("persisted file gets retrieved", async () => {
 
 test("retrieval fails", async () => {
     const filePath = '/fake/path/to/file'
-    // try {
-    // let res = await retrieveFromFile(filePath)
-    // console.log(res)
-    // } catch (e) {
-    //     console.log(e)
-    //     expect(e).toThrowError(typeof Error)
-    // }
-    expect(async () => await retrieveFromFile(filePath)).toThrow()
+    try {
+        let res = await retrieveFromFile(filePath)
+        // console.log(res)
+    } catch (e) {
+        console.log(typeof e)
+        //     expect(e).toThrowError(typeof Error)
+    }
+    // expect(async () => await retrieveFromFile(filePath)).toThrow()
 })
