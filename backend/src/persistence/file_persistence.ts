@@ -1,3 +1,3 @@
-export const persistInFile = (timeString: string) => {
+export const persistInFile = (timeString: string, filepath: string) => {
 
 }
