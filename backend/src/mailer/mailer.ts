@@ -1,6 +1,3 @@
-import * as fs from 'fs'
-import * as yaml from 'js-yaml'
-import { cwd } from 'process'
 import * as nodemailer from 'nodemailer'
 
 class MailerConfig {
