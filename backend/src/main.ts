@@ -4,8 +4,9 @@ import { REPL_MODE_SLOPPY } from 'repl'
 import { connectionGet, stationGet } from './loader/loader'
 import * as fs from 'fs'
 import * as fileHandle from 'fs/promises'
-import { loadConfig, sendMail } from './mailer/mailer'
+import { loadMailerConfig, sendMail } from './mailer/mailer'
 import { extractZerothConnection, isConnectionCancelled, isConnectionDelayed } from './connection_processor/connection_processor'
+import { loadConfig } from './config_loader/config_loader'
 
 const fastify = Fastify({ logger: true })
 
@@ -38,11 +39,13 @@ fastify.get('/connection', async (req, res) => {
 })
 
 fastify.get('/mail', async (req, res) => {
-    let config = await loadConfig('config_default.yaml')
+    // let config = await loadConfig('config_default.yaml')
+    const config = loadConfig('config_default.yaml')
+    const mailerConfig = loadMailerConfig(config['mail'])
     const connections = await connectionGet()
     const zerothConnection = extractZerothConnection(connections)
     const isConnectionBorked = isConnectionCancelled(zerothConnection) && isConnectionDelayed(zerothConnection)
-    let mailRes = await sendMail(config, isConnectionBorked)
+    let mailRes = await sendMail(mailerConfig, isConnectionBorked)
     res.send(zerothConnection)
 })
 
