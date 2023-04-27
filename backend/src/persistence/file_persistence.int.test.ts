@@ -23,3 +23,14 @@ test("persisted file gets retrieved", async () => {
     expect(readTimeString).toBe(timeString)
     rmSync(filePath)
 })
+
+test("retrieval fails", async () => {
+    const parsedYaml = await loadConfig("config_test.yaml")
+    const filePath = parsedYaml['file']
+    try {
+        await retrieveFromFile(filePath)
+    } catch (e) {
+        console.log(e)
+        expect(e).toMatch('error')
+    }
+})
