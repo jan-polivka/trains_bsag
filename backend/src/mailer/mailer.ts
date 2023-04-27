@@ -28,7 +28,7 @@ export const loadConfig = async (filename: string): Promise<MailerConfig> => {
     const path = `${cwd()}/config/${filename}`
     const file = await fs.promises.readFile(path)
     const parsedYaml = yaml.load(file.toString())
-    return new MailerConfig(parsedYaml)
+    return new MailerConfig(parsedYaml["mail"])
 }
 
 export const sendMail = async (config: MailerConfig, isConnectionBorked: boolean) => {
