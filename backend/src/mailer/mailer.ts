@@ -24,6 +24,10 @@ type Auth = {
     pass: string
 }
 
+export const loadMailerConfig = (yamlMail: string): MailerConfig => {
+    return new MailerConfig(yamlMail["mail"])
+}
+
 export const loadConfig = async (filename: string): Promise<MailerConfig> => {
     const path = `${cwd()}/config/${filename}`
     const file = await fs.promises.readFile(path)
