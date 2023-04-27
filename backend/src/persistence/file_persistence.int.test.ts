@@ -8,7 +8,8 @@ test("simple test that shouldn't run", async () => {
     const parsedYaml = await loadConfig("config_test.yaml")
     const filePath = parsedYaml['file']
     await persistInFile(timeString, filePath)
-    let file = readFileSync(filePath)
+    let file = readFileSync(filePath, 'utf-8')
+    console.log(file)
     expect(file['timeString']).toBe(timeString)
     rmSync(filePath)
 })
