@@ -8,8 +8,7 @@ test("file persistence integration test", async () => {
     const parsedYaml = await loadConfig("config_test.yaml")
     const filePath = parsedYaml['file']
     await persistInFile(timeString, filePath)
-    let file = readFileSync(filePath, 'utf-8')
-    console.log(file)
+    let file = JSON.parse(readFileSync(filePath, 'utf-8'))
     expect(file['timeString']).toBe(timeString)
     rmSync(filePath)
 })
