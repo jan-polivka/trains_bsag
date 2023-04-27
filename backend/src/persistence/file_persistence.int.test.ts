@@ -6,7 +6,7 @@ import { fsync, readFileSync, rmSync } from "fs";
 test("simple test that shouldn't run", async () => {
     const timeString = "1111"
     const filePath = await loadConfig("config_test.yaml")
-    persistInFile(timeString, filePath)
+    await persistInFile(timeString, filePath)
     let file = readFileSync(filePath['file'])
     expect(file['timeString']).toBe(timeString)
     rmSync(filePath)
