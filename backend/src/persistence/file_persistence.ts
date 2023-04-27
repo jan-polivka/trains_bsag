@@ -1,6 +1,6 @@
-import { writeFile } from "fs/promises"
+import { writeFileSync } from "fs"
 
 export const persistInFile = async (timeString: string, filepath: string) => {
     const jsonTimeString = JSON.stringify({ timeString: timeString })
-    writeFile(filepath, jsonTimeString)
+    writeFileSync(filepath, jsonTimeString)
 }
