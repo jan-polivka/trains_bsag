@@ -8,5 +8,6 @@ export const persistInFile = async (timeString: string, filepath: string) => {
 
 export const retrieveFromFile = async (filepath: string): Promise<string> => {
     const timeStringFile = await readFile(filepath)
+    console.log(timeStringFile)
     return timeStringFile['timeString']
 }
