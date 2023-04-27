@@ -3,7 +3,7 @@ import { loadConfig } from "../config_loader/config_loader";
 import { persistInFile } from "./file_persistence";
 import { fsync, readFileSync, rmSync } from "fs";
 
-test("simple test that shouldn't run", async () => {
+test("file persistence integration test", async () => {
     const timeString = "1111"
     const parsedYaml = await loadConfig("config_test.yaml")
     const filePath = parsedYaml['file']
