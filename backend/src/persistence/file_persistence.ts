@@ -10,7 +10,7 @@ export const retrieveFromFile = async (filepath: string): Promise<string> => {
     const timeStringFile = await readFile(filepath, "utf-8")
         .catch(err => {
             console.log("caught")
-            throw err
+            throw new Error("file does not exist")
         })
     console.log(timeStringFile)
     return JSON.parse(timeStringFile)['timeString']
