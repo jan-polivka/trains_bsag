@@ -11,7 +11,6 @@ export const retrieveFromFile = async (filepath: string): Promise<string> => {
         console.error(err.message)
         return ""
     })
-    console.log(timeStringFile)
     if (timeStringFile === "")
         return ""
     return JSON.parse(timeStringFile)['timeString']
