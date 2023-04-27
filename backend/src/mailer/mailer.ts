@@ -28,13 +28,6 @@ export const loadMailerConfig = (yamlMail: string): MailerConfig => {
     return new MailerConfig(yamlMail["mail"])
 }
 
-export const loadConfig = async (filename: string): Promise<MailerConfig> => {
-    const path = `${cwd()}/config/${filename}`
-    const file = await fs.promises.readFile(path)
-    const parsedYaml = yaml.load(file.toString())
-    return new MailerConfig(parsedYaml["mail"])
-}
-
 export const sendMail = async (config: MailerConfig, isConnectionBorked: boolean) => {
     const subject = isConnectionBorked ? "IT'S A NO GO, CHIEF" : "ALL GOOD, CHIEF"
     const transporter = nodemailer.createTransport(config)
