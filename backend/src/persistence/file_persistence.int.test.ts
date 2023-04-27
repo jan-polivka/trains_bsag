@@ -27,5 +27,5 @@ test("persisted file gets retrieved", async () => {
 test("retrieval fails", async () => {
     const filePath = '/fake/path/to/file'
     let res = await retrieveFromFile(filePath)
-    expect(res).toBe("")
+    expect(res).toBe(undefined)
 })

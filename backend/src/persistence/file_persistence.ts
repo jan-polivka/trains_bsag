@@ -12,5 +12,7 @@ export const retrieveFromFile = async (filepath: string): Promise<string> => {
         return '{"timestring": ""}'
     })
     console.log(timeStringFile)
-    return JSON.parse(timeStringFile)['timeString']
+    const parsed = JSON.parse(timeStringFile)
+    console.log(parsed)
+    return parsed['timeString']
 }
