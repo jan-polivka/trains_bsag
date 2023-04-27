@@ -1,10 +1,12 @@
-import { writeFileSync } from "fs"
+import { readFileSync, writeFileSync } from "fs"
+import { writeFile } from "fs/promises"
 
-export const persistInFile = (timeString: string, filepath: string) => {
+export const persistInFile = async (timeString: string, filepath: string) => {
     const jsonTimeString = JSON.stringify({ timeString: timeString })
-    writeFileSync(filepath, jsonTimeString)
+    await writeFile(filepath, jsonTimeString)
 }
 
 export const retrieveFromFile = (filepath: string): string => {
+    readFileSync
     return ""
 }
