@@ -39,7 +39,6 @@ fastify.get('/connection', async (req, res) => {
 })
 
 fastify.get('/mail', async (req, res) => {
-    // let config = await loadConfig('config_default.yaml')
     const config = loadConfig('config_default.yaml')
     const mailerConfig = loadMailerConfig(config['mail'])
     const connections = await connectionGet()
