@@ -3,5 +3,5 @@ import { loadConfig } from './config_loader'
 
 test("yaml file parsing", async () => {
     const result = await loadConfig("config_test.yaml")
-    expect(result.host).toBe("smtp.fakeserver.org")
+    expect(result.mail.host).toBe("smtp.fakeserver.org")
 })
