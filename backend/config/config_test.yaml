@@ -6,3 +6,4 @@ mail:
     user: postmaster@123456.fakeserver.org
     pass: 7890
   email: fake@email.com
+file: '/tmp/mail.json'
