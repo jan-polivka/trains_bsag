@@ -4,7 +4,6 @@ import { submitTimeString } from "../src/SubscribeForm/submitTimeString"
 describe("integration tests", () => {
     it("submission successful", async () => {
         let response = await submitTimeString("1010")
-        console.log(response)
         assert.equal(response, "OK")
     })
 
