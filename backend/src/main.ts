@@ -55,7 +55,7 @@ fastify.post('/submit_time_string', async (req, res) => {
     res.send(resp)
 })
 
-fastify.get('retrie_time_string', async (req, res) => {
+fastify.get('/retrie_time_string', async (req, res) => {
     const config = await loadConfig('config_default.yaml')
     const timeString = retrieveFromFile(config['file'])
     res.send(timeString)
