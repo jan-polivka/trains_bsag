@@ -1,3 +1,3 @@
-export const RetrieveForm = (retrieveTimeString: () => string): JSX.Element => {
+export const RetrieveForm = (props: { retrieveTimeString: () => string }): JSX.Element => {
     return <></>
 }
