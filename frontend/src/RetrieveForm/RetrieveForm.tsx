@@ -8,6 +8,7 @@ export const RetrieveForm = (props: { retrieveTimeString: () => string }): JSX.E
     return (
         <>
             <label aria-label="retrieved-time-string">{timeString}</label>
+            <br />
             <Button aria-label="retrieve-time-string" onClick={props.retrieveTimeString}>Retrieve time string</Button>
         </>
     )
