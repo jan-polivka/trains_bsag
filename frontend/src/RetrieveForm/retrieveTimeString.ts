@@ -1,3 +1,4 @@
-export const retrieveTimeString = (): string => {
+export const retrieveTimeString = async (): Promise<string> => {
+
     return ""
 }
