@@ -7,6 +7,7 @@ import * as fileHandle from 'fs/promises'
 import { loadMailerConfig, sendMail } from './mailer/mailer'
 import { extractZerothConnection, isConnectionCancelled, isConnectionDelayed } from './connection_processor/connection_processor'
 import { loadConfig } from './config_loader/config_loader'
+import { retrieveFromFile } from './persistence/file_persistence'
 
 const fastify = Fastify({ logger: true })
 
@@ -52,6 +53,12 @@ fastify.post('/submit_time_string', async (req, res) => {
     const parsed = +req.body["timeString"]
     const resp = Number.isNaN(parsed) ? "NOT OK" : "OK"
     res.send(resp)
+})
+
+fastify.get('retrie_time_string', async (req, res) => {
+    const config = await loadConfig('config_default.yaml')
+    const timeString = retrieveFromFile(config['file'])
+    res.send(timeString)
 })
 
 fastify.listen({ port: 8080 }, () => {
