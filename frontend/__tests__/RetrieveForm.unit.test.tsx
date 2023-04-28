@@ -10,9 +10,8 @@ describe("RetrieveForm", () => {
         render(<RetrieveForm retrieveTimeString={mockRetrieveTimeString} />)
         const retrieveButton = screen.getByLabelText("retrieve-time-string")
         await user.click(retrieveButton)
+        const retrievedTimeString = screen.getByLabelText("retrieved-time-string")
+        expect(retrievedTimeString.textContent).toBe("1111")
         expect(mockRetrieveTimeString).toBeCalled()
-        const retrieveTimeString = screen.getByLabelText("retrieved-time-string")
-        //verify that mock has been called
-        //verify that there is a label and it carries the timeString
     })
 })
