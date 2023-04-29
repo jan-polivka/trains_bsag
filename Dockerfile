@@ -8,5 +8,5 @@ RUN apt install git -y
 RUN apt install curl -y
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh |  bash
 ENV NVM_DIR=/root/.nvm
-RUN . "$NVM_DIR/nvm.sh" && nvm install 14.17.0 && nvm use 14.17.0
+RUN . "$NVM_DIR/nvm.sh" && nvm install 
 
