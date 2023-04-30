@@ -1,0 +1,10 @@
+services:
+  frontend:
+    build: .
+    stdin_open: true
+    tty: true
+  backend:
+    build: .
+    stdin_open: true
+    tty: true
+
