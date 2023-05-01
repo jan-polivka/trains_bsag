@@ -1,13 +1,12 @@
-import Fastify from 'fastify'
 import cors from '@fastify/cors'
-import { REPL_MODE_SLOPPY } from 'repl'
-import { connectionGet, stationGet } from './loader/loader'
+import Fastify from 'fastify'
 import * as fs from 'fs'
-import * as fileHandle from 'fs/promises'
-import { loadMailerConfig, sendMail } from './mailer/mailer'
-import { extractZerothConnection, isConnectionCancelled, isConnectionDelayed } from './connection_processor/connection_processor'
 import { loadConfig } from './config_loader/config_loader'
+import { extractZerothConnection, isConnectionCancelled, isConnectionDelayed } from './connection_processor/connection_processor'
+import { connectionGet, stationGet } from './loader/loader'
+import { loadMailerConfig, sendMail } from './mailer/mailer'
 import { persistInFile, retrieveFromFile } from './persistence/file_persistence'
+import * as schedule from 'node-schedule'
 
 const fastify = Fastify({ logger: true })
 
@@ -55,6 +54,9 @@ fastify.post('/submit_time_string', async (req, res) => {
     if (!Number.isNaN(parsed)) {
         const config = await loadConfig('config_default.yaml')
         await persistInFile(parsed.toString(), config['file'])
+        const job = schedule.scheduleJob('42 * * * *', function () {
+            console.log('The answer to life, the universe, and everything!');
+        });
     }
     res.send(resp)
 })
@@ -68,4 +70,5 @@ fastify.get('/retrieve_time_string', async (req, res) => {
 
 fastify.listen({ port: 8080 }, () => {
     console.log("doing the listen")
+    const scheduledJobs = new Array()
 })
