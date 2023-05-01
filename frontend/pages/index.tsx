@@ -9,8 +9,8 @@ const homePage = (): any => {
             <Grid2 xs={12}>
                 Hello world!
             </Grid2>
-            <Grid2 xs={12}>
-                <RetrieveForm retrieveTimeString={() => "1234"} />
+            <Grid2 xs={12}>() => "1234"
+                <RetrieveForm retrieveTimeString={retrieveTimeString} />
             </Grid2>
             <Grid2 xs={"auto"}>
                 <SubscribeForm submitTimeString={submitTimeString} />
