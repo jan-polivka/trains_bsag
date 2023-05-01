@@ -54,7 +54,9 @@ fastify.post('/submit_time_string', async (req, res) => {
     if (!Number.isNaN(parsed)) {
         const config = await loadConfig('config_default.yaml')
         await persistInFile(parsed.toString(), config['file'])
-        const job = schedule.scheduleJob('42 * * * *', function () {
+        const hour = parsed.toString().slice(0, 2)
+        const minute = parsed.toString().slice(2)
+        const job = schedule.scheduleJob(`${minute} ${hour} * * *`, function () {
             console.log("running the job")
         });
     }
