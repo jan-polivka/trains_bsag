@@ -73,4 +73,7 @@ fastify.get('/retrieve_time_string', async (req, res) => {
 fastify.listen({ port: 8080 }, () => {
     console.log("doing the listen")
     const scheduledJobs = new Array()
+    const job = schedule.scheduleJob(`16 10 * * *`, function () {
+        console.log("running the job")
+    });
 })
