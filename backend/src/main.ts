@@ -54,13 +54,13 @@ fastify.post('/submit_time_string', async (req, res) => {
     if (!Number.isNaN(parsed)) {
         const config = await loadConfig('config_default.yaml')
         await persistInFile(parsed.toString(), config['file'])
-        const hour = parsed.toString().slice(0, 2)
+        const hour = (parseInt(parsed.toString().slice(0, 2)) - 2).toString()
         const minute = parsed.toString().slice(2)
-        // console.log(hour)
-        // console.log(minute)
-        // const job = schedule.scheduleJob(`23 8 * * *`, function () {
-        //     console.log("persisted job")
-        // });
+        console.log(hour)
+        console.log(minute)
+        const job = schedule.scheduleJob(`23 8 * * *`, function () {
+            console.log("persisted job")
+        });
     }
     res.send(resp)
 })
@@ -77,13 +77,3 @@ fastify.listen({ port: 8080 }, () => {
     const scheduledJobs = new Array()
     console.log(Date.now())
 })
-
-// const job = schedule.scheduleJob(`27 08 * *`, function () {
-//     console.log("in listen")
-// });
-const job2 = schedule.scheduleJob(`31 08 * * *`, function () {
-    console.log("hjkjk")
-});
-// const job3 = schedule.scheduleJob(`28 10 * *`, function () {
-//     console.log("sdfsdf")
-// });
