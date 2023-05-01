@@ -3,7 +3,7 @@ import Grid2 from "@mui/material/Unstable_Grid2";
 import { useState } from "react";
 
 export const SubscribeForm = (props: {
-  submitTimeString: (timeString: string) => void;
+  submitTimeString: (hourString: string, minuteString: string) => void;
 }): JSX.Element => {
   const [hourString, setHourString] = useState("");
   const [minuteString, setMinuteString] = useState("");
