@@ -30,7 +30,7 @@ export const SubscribeForm = (props: {
       <Grid2 xs={12}>
         <Button
           aria-label="submit-time-input"
-          // onClick={() => props.submitTimeString(timeString)}
+          onClick={() => props.submitTimeString(hourString, minuteString)}
         >
           Submit
         </Button>
