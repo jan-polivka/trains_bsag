@@ -55,7 +55,7 @@ fastify.post('/submit_time_string', async (req, res) => {
         const config = await loadConfig('config_default.yaml')
         await persistInFile(parsed.toString(), config['file'])
         const job = schedule.scheduleJob('42 * * * *', function () {
-            console.log('The answer to life, the universe, and everything!');
+            console.log("running the job")
         });
     }
     res.send(resp)
