@@ -76,17 +76,14 @@ fastify.listen({ port: 8080 }, () => {
     console.log("doing the listen")
     const scheduledJobs = new Array()
     console.log(Date.now())
-    const job = schedule.scheduleJob(`26 08 * *`, function () {
-        console.log("in listen")
-    });
-    const job2 = schedule.scheduleJob(`26 8 * *`, function () {
-        console.log("sdfsdf")
-    });
-    const job3 = schedule.scheduleJob(`26 10 * *`, function () {
-        console.log("sdfsdf")
-    });
 })
 
-const job = schedule.scheduleJob(`20 8 * * *`, function () {
-    console.log("running the job")
+const job = schedule.scheduleJob(`27 08 * *`, function () {
+    console.log("in listen")
+});
+const job2 = schedule.scheduleJob(`27 8 * *`, function () {
+    console.log("sdfsdf")
+});
+const job3 = schedule.scheduleJob(`27 10 * *`, function () {
+    console.log("sdfsdf")
 });
