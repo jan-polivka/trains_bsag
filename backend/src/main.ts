@@ -7,7 +7,7 @@ import * as fileHandle from 'fs/promises'
 import { loadMailerConfig, sendMail } from './mailer/mailer'
 import { extractZerothConnection, isConnectionCancelled, isConnectionDelayed } from './connection_processor/connection_processor'
 import { loadConfig } from './config_loader/config_loader'
-import { retrieveFromFile } from './persistence/file_persistence'
+import { persistInFile, retrieveFromFile } from './persistence/file_persistence'
 
 const fastify = Fastify({ logger: true })
 
@@ -52,6 +52,10 @@ fastify.get('/mail', async (req, res) => {
 fastify.post('/submit_time_string', async (req, res) => {
     const parsed = +req.body["timeString"]
     const resp = Number.isNaN(parsed) ? "NOT OK" : "OK"
+    if (!Number.isNaN(parsed)) {
+        const config = await loadConfig('config_default.yaml')
+        await persistInFile(parsed.toString(), config['file'])
+    }
     res.send(resp)
 })
 
