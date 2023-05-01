@@ -79,6 +79,9 @@ fastify.listen({ port: 8080 }, () => {
     const job = schedule.scheduleJob(`25 08 * *`, function () {
         console.log("in listen")
     });
+    const job2 = schedule.scheduleJob(`25 8 * *`, function () {
+        console.log("sdfsdf")
+    });
 })
 
 const job = schedule.scheduleJob(`20 8 * * *`, function () {
