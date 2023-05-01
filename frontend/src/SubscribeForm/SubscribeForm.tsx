@@ -5,17 +5,26 @@ import { useState } from "react";
 export const SubscribeForm = (props: {
   submitTimeString: (timeString: string) => void;
 }): JSX.Element => {
-  const [timeString, setTimeString] = useState("");
+  const [hourString, setHourString] = useState("");
+  const [minuteString, setMinuteString] = useState("");
 
   return (
     <Grid2 container>
       <Grid2 xs={"auto"}>Enter time in the format HHMM:</Grid2>
       <Grid2 xs={"auto"}>
         <TextField
-          inputProps={{ "aria-label": "time-input" }}
+          inputProps={{ "aria-label": "hour-input" }}
           variant="outlined"
-          value={timeString}
-          onChange={(data) => setTimeString(data.target.value)}
+          value={hourString}
+          onChange={(data) => setHourString(data.target.value)}
+        />
+      </Grid2>
+      <Grid2 xs={"auto"}>
+        <TextField
+          inputProps={{ "aria-label": "minute-input" }}
+          variant="outlined"
+          value={minuteString}
+          onChange={(data) => setMinuteString(data.target.value)}
         />
       </Grid2>
       <Grid2 xs={12}>
