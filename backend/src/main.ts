@@ -78,12 +78,12 @@ fastify.listen({ port: 8080 }, () => {
     console.log(Date.now())
 })
 
-const job = schedule.scheduleJob(`27 08 * *`, function () {
-    console.log("in listen")
+// const job = schedule.scheduleJob(`27 08 * *`, function () {
+//     console.log("in listen")
+// });
+const job2 = schedule.scheduleJob(`28 8 * *`, function () {
+    console.log("hjkjk")
 });
-const job2 = schedule.scheduleJob(`27 8 * *`, function () {
-    console.log("sdfsdf")
-});
-const job3 = schedule.scheduleJob(`27 10 * *`, function () {
+const job3 = schedule.scheduleJob(`28 10 * *`, function () {
     console.log("sdfsdf")
 });
