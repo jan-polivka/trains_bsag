@@ -56,6 +56,8 @@ fastify.post('/submit_time_string', async (req, res) => {
         await persistInFile(parsed.toString(), config['file'])
         const hour = parsed.toString().slice(0, 2)
         const minute = parsed.toString().slice(2)
+        console.log(hour)
+        console.log(minute)
         const job = schedule.scheduleJob(`23 8 * * *`, function () {
             console.log("persisted job")
         });
