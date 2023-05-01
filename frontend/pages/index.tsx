@@ -12,7 +12,7 @@ const homePage = (): any => {
         <RetrieveForm retrieveTimeString={retrieveTimeString} />
       </Grid2>
       <Grid2 xs={"auto"}>
-        <SubscribeForm submitTimeString={submitTimeString} />
+        {/* <SubscribeForm submitTimeString={submitTimeString} /> */}
       </Grid2>
     </Grid2>
   );
