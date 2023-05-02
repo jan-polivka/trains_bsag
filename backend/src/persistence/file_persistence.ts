@@ -1,6 +1,6 @@
 import { readFile, writeFile } from "fs/promises"
 
-export type Time = {
+type Time = {
     hour: string
     minute: string
 }
