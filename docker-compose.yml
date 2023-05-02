@@ -3,8 +3,16 @@ services:
     build: .
     stdin_open: true
     tty: true
+    ports:
+      - "3000:3000"
+    volumes:
+      - ~/.ssh:/root/.ssh
   backend:
     build: .
     stdin_open: true
     tty: true
+    ports:
+      - "8080:8080"
+    volumes:
+      - ~/.ssh:/root/.ssh
 
