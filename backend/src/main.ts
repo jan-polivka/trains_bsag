@@ -54,7 +54,7 @@ fastify.post('/submit_time_string', async (req, res) => {
     const hour = +req.body['hourString']
     const minute = +req.body['minuteString']
     const resp = Number.isNaN(hour) && Number.isNaN(minute) ? "NOT OK" : "OK"
-    if (!Number.isNaN(parsed)) {
+    if (resp === "OK") {
         const config = await loadConfig('config_default.yaml')
         await persistInFile(parsed.toString(), config['file'])
         console.log(hour)
