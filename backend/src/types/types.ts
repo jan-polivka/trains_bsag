@@ -10,3 +10,8 @@ export type Connection = {
         canceled: string
     }
 }
+
+export type Time = {
+    hour: string
+    minute: string
+}
