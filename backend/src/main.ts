@@ -49,6 +49,7 @@ fastify.get('/mail', async (req, res) => {
 })
 
 fastify.post('/submit_time_string', async (req, res) => {
+    console.log(req.body)
     const parsed = +req.body["timeString"]
     const resp = Number.isNaN(parsed) ? "NOT OK" : "OK"
     if (!Number.isNaN(parsed)) {
