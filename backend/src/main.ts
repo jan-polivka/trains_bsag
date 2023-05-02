@@ -63,6 +63,7 @@ fastify.post('/submit_time_string', async (req, res) => {
             console.log("persisted job")
         });
     }
+    res.status(200)
     res.send(resp)
 })
 
