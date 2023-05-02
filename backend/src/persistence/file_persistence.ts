@@ -1,7 +1,12 @@
 import { readFile, writeFile } from "fs/promises"
 
-export const persistInFile = async (timeString: string, filepath: string) => {
-    const jsonTimeString = JSON.stringify({ timeString: timeString })
+export type Time = {
+    hour: string
+    minute: string
+}
+
+export const persistInFile = async (time: Time, filepath: string) => {
+    const jsonTimeString = JSON.stringify(time)
     await writeFile(filepath, jsonTimeString)
 }
 
