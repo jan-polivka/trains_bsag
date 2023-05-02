@@ -1,9 +1,5 @@
 import { readFile, writeFile } from "fs/promises"
-
-type Time = {
-    hour: string
-    minute: string
-}
+import { Time } from "../types/types"
 
 export const persistInFile = async (time: Time, filepath: string) => {
     const jsonTimeString = JSON.stringify(time)
