@@ -51,12 +51,12 @@ fastify.get('/mail', async (req, res) => {
 fastify.post('/submit_time_string', async (req, res) => {
     console.log(req.body)
     const parsed = +req.body["timeString"]
-    const resp = Number.isNaN(parsed) ? "NOT OK" : "OK"
+    const hour = +req.body['hourString']
+    const minute = +req.body['minuteString']
+    const resp = Number.isNaN(hour) && Number.isNaN(minute) ? "NOT OK" : "OK"
     if (!Number.isNaN(parsed)) {
         const config = await loadConfig('config_default.yaml')
         await persistInFile(parsed.toString(), config['file'])
-        const hour = (parseInt(parsed.toString().slice(0, 2)) - 2).toString()
-        const minute = parsed.toString().slice(2)
         console.log(hour)
         console.log(minute)
         const job = schedule.scheduleJob(`23 8 * * *`, function () {
