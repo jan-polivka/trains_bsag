@@ -29,5 +29,11 @@ export const connectionGetBremen = async (apiKey: string): Promise<String> => {
     const start = '53.169621000000,8.627897000000'
     const destination = '53.103839000000,8.786177000000'
     const urlBremen = `http://gtfsr.vbn.de/api/routers/connect/plan?arriveBy=false&date=05-10-2023&fromPlace=${start}&toPlace=${destination}&time=13:00:00&mode=TRANSIT`
+    const optionsBremen = {
+        headers: {
+            "Authorization": 'whatever',
+            "Host": 'gtfsr.vbn.de'
+        }
+    }
     return ""
 }
