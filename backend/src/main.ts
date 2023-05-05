@@ -3,7 +3,7 @@ import Fastify from 'fastify'
 import * as fs from 'fs'
 import { loadConfig } from './config_loader/config_loader'
 import { extractZerothConnection, isConnectionCancelled, isConnectionDelayed } from './connection_processor/connection_processor'
-import { connectionGet, stationGet } from './loader/loader'
+import { connectionGet, connectionGetBremen, stationGet } from './loader/loader'
 import { loadMailerConfig, sendMail } from './mailer/mailer'
 import { persistInFile, retrieveFromFile } from './persistence/file_persistence'
 import * as schedule from 'node-schedule'
@@ -83,6 +83,7 @@ fastify.listen({ port: 8080 }, () => {
         console.log("persisted job")
         // when the time comes:
         // make the API call
+        connectionGetBremen()
         // process the returned data
         // decide what is the status
         // send the email
