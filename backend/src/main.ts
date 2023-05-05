@@ -81,10 +81,10 @@ fastify.listen({ port: 8080 }, () => {
     // create the job
     const job = schedule.scheduleJob(`15 * * * * *`, function () {
         console.log("persisted job")
+        // when the time comes:
+        // make the API call
+        // process the returned data
+        // decide what is the status
+        // send the email
     });
-    // when the time comes:
-    // make the API call
-    // process the returned data
-    // decide what is the status
-    // send the email
 })
