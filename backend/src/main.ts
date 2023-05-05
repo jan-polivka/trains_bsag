@@ -80,7 +80,7 @@ fastify.listen({ port: 8080 }, async () => {
     console.log(Date.now())
     // create the job
     const config = await loadConfig('config_default.yaml')
-    const mailerConfig = loadMailerConfig(config['mail'])
+    const mailerConfig = loadMailerConfig(config)
     const job = schedule.scheduleJob(`15 * * * * *`, async function () {
         console.log("persisted job")
         // when the time comes:
