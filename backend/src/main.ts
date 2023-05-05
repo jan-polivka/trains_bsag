@@ -78,4 +78,10 @@ fastify.listen({ port: 8080 }, () => {
     console.log("doing the listen")
     const scheduledJobs = new Array()
     console.log(Date.now())
+    // create the job
+    // when the time comes:
+    // make the API call
+    // process the returned data
+    // decide what is the status
+    // send the email
 })
