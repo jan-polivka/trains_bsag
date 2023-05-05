@@ -41,7 +41,7 @@ export const connectionGetBremen = async (): Promise<String> => {
             "Host": 'gtfsr.vbn.de'
         }
     }
-    // let resp = await fetch(urlBremen, optionsBremen)
-    // console.log(resp)
+    let resp = await fetch(urlBremen, optionsBremen)
+    console.log(resp)
     return ""
 }
