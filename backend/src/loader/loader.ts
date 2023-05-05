@@ -29,7 +29,7 @@ export async function connectionGet(): Promise<Connections> {
 export const connectionGetBremen = async (): Promise<String> => {
     const config = await loadConfig('config_default.yaml')
     const apiKey = config['api_key']
-    const start = '53.169621,8.627897'
+    const start = '53.16976,8.629996'
     const destination = '53.103839,8.786177'
     // const urlBremen = `http://gtfsr.vbn.de/api/routers/connect/plan?arriveBy=false&date=05-10-2023&fromPlace=53.08287,8.81334&toPlace=53.05270,8.78617&time=13:00:00&mode=WALK,TRANSIT&maxWalkDistance=300`
     const urlBremen = `http://gtfsr.vbn.de/api/routers/connect/plan?arriveBy=false&date=05-10-2023&fromPlace=${start}&toPlace=${destination}&time=13:00:00&mode=WALK,TRANSIT&maxWalkDistance=300`
