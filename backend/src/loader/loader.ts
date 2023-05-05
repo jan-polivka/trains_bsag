@@ -42,6 +42,6 @@ export const connectionGetBremen = async (): Promise<String> => {
         }
     }
     let resp = await fetch(urlBremen, optionsBremen)
-    console.log(resp)
+    console.log(resp.json())
     return ""
 }
