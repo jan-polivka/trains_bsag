@@ -41,7 +41,6 @@ export const connectionGetBremen = async (): Promise<number> => {
         }
     }
     let resp = await fetch(urlBremen, optionsBremen)
-    // console.log(await resp.json())
     const json = await resp.json()
     const delay = json['plan']['itineraries'][0]['legs'][0]['departureDelay']
     return delay
