@@ -24,3 +24,7 @@ export async function connectionGet(): Promise<Connections> {
     let connections: Connections = await resp.json()
     return connections
 }
+
+export const connectionGetBremen = async (): Promise<String> => {
+    return ""
+}
