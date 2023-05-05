@@ -74,12 +74,12 @@ fastify.get('/retrieve_time_string', async (req, res) => {
     res.send(timeString)
 })
 
-fastify.listen({ port: 8080 }, () => {
+fastify.listen({ port: 8080 }, async () => {
     console.log("doing the listen")
     const scheduledJobs = new Array()
     console.log(Date.now())
     // create the job
-    const config = loadConfig('config_default.yaml')
+    const config = await loadConfig('config_default.yaml')
     const mailerConfig = loadMailerConfig(config['mail'])
     const job = schedule.scheduleJob(`15 * * * * *`, async function () {
         console.log("persisted job")
