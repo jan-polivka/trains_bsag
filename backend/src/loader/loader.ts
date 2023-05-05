@@ -28,7 +28,6 @@ export async function connectionGet(): Promise<Connections> {
 
 export const connectionGetBremen = async (): Promise<String> => {
     const config = await loadConfig('config_default.yaml')
-    console.log(config)
     const apiKey = config['api_key']
     const start = '53.169621000000,8.627897000000'
     const destination = '53.103839000000,8.786177000000'
