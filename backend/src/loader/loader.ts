@@ -26,7 +26,7 @@ export async function connectionGet(): Promise<Connections> {
     return connections
 }
 
-export const connectionGetBremen = async (): Promise<String> => {
+export const connectionGetBremen = async (): Promise<number> => {
     const config = await loadConfig('config_default.yaml')
     const apiKey = config['api_key']
     const start = '53.16976,8.629996'
@@ -43,6 +43,6 @@ export const connectionGetBremen = async (): Promise<String> => {
     let resp = await fetch(urlBremen, optionsBremen)
     // console.log(await resp.json())
     const json = await resp.json()
-    console.log(json['plan']['itineraries'][0]['legs'])
-    return ""
+    const delay = json['plan']['itineraries'][0]['legs'][0]['departureDelay']
+    return delay
 }
