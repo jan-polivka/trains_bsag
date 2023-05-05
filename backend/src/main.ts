@@ -79,11 +79,11 @@ fastify.listen({ port: 8080 }, () => {
     const scheduledJobs = new Array()
     console.log(Date.now())
     // create the job
+    connectionGetBremen()
     const job = schedule.scheduleJob(`15 * * * * *`, function () {
         console.log("persisted job")
         // when the time comes:
         // make the API call
-        connectionGetBremen()
         // process the returned data
         // decide what is the status
         // send the email
