@@ -42,8 +42,8 @@ export const connectionGetBremen = async (): Promise<String> => {
         }
     }
     let resp = await fetch(urlBremen, optionsBremen)
-    // console.log(await resp.json())
-    const json = await resp.json()
-    console.log(json['plan'])
+    console.log(await resp.json())
+    // const json = await resp.json()
+    // console.log(json['plan'])
     return ""
 }
