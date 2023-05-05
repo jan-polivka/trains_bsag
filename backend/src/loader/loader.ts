@@ -31,7 +31,8 @@ export const connectionGetBremen = async (): Promise<String> => {
     const apiKey = config['api_key']
     const start = '53.169621000000,8.627897000000'
     const destination = '53.103839000000,8.786177000000'
-    const urlBremen = `http://gtfsr.vbn.de/api/routers/connect/plan?arriveBy=false&date=05-10-2023&fromPlace=${start}&toPlace=${destination}&time=13:00:00&mode=TRANSIT`
+    const urlBremen = `http://gtfsr.vbn.de/api/routers/connect/plan?arriveBy=false&date=07-25-2019&fromPlace=53.08287,8.81334&toPlace=53.05270,8.78617&time=13:00:00&mode=WALK,TRANSIT&maxWalkDistance=300`
+    // const urlBremen = `http://gtfsr.vbn.de/api/routers/connect/plan?arriveBy=false&date=05-10-2023&fromPlace=${start}&toPlace=${destination}&time=13:00:00&mode=TRANSIT`
 
     const optionsBremen = {
         headers: {
