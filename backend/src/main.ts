@@ -79,7 +79,7 @@ fastify.listen({ port: 8080 }, async () => {
     const scheduledJobs = new Array()
     console.log(Date.now())
     // create the job
-    let optionsIntl = {
+    let optionsIntl: Intl.DateTimeFormatOptions = {
         timeZone: 'Europe/London',
         year: 'numeric',
         month: 'numeric',
