@@ -90,7 +90,8 @@ fastify.listen({ port: 8080 }, async () => {
     },
         formatter = new Intl.DateTimeFormat([], optionsIntl);
 
-    console.log(formatter.format(new Date()));
+    const date = formatter.format(new Date());
+    console.log(date)
     const config = await loadConfig('config_default.yaml')
     const mailerConfig = loadMailerConfig(config)
     const job = schedule.scheduleJob(`15 * * * * *`, async function () {
