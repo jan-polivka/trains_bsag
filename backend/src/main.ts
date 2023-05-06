@@ -88,8 +88,8 @@ fastify.listen({ port: 8080 }, async () => {
         // process the returned data
         // decide what is the status
         // send the email
-        // const delay = await connectionGetBremen()
-        // const isConnectionBorked = delay > 0 ? true : false
-        // let mailRes = await sendMail(mailerConfig, isConnectionBorked)
+        const delay = await connectionGetBremen()
+        const isConnectionBorked = delay > 0 ? true : false
+        let mailRes = await sendMail(mailerConfig, isConnectionBorked)
     });
 })
