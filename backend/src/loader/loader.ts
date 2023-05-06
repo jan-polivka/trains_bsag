@@ -39,9 +39,9 @@ export const connectionGetBremen = async (): Promise<number> => {
     const formatter = new Intl.DateTimeFormat([], optionsIntl);
     const date = formatter.formatToParts(new Date());
     console.log(date)
-    const month = date[0]
-    const day = date[2]
-    const year = date[4]
+    const month = date[0]['value']
+    const day = date[2]['value']
+    const year = date[4]['value']
     const config = await loadConfig('config_default.yaml')
     const apiKey = config['api_key']
     const start = '53.16976,8.629996'
