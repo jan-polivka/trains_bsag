@@ -79,6 +79,21 @@ fastify.listen({ port: 8080 }, async () => {
     const scheduledJobs = new Array()
     console.log(Date.now())
     // create the job
+    let optionsIntl: Intl.DateTimeFormatOptions = {
+        timeZone: 'Europe/Berlin',
+        year: 'numeric',
+        month: 'numeric',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric',
+    }
+    const formatter = new Intl.DateTimeFormat([], optionsIntl);
+    const date = formatter.formatToParts(new Date());
+    console.log(date)
+    const month = date[0]
+    const day = date[2]
+    const year = date[4]
     const config = await loadConfig('config_default.yaml')
     const mailerConfig = loadMailerConfig(config)
     const job = schedule.scheduleJob(`15 * * * * *`, async function () {
@@ -88,8 +103,8 @@ fastify.listen({ port: 8080 }, async () => {
         // process the returned data
         // decide what is the status
         // send the email
-        const delay = await connectionGetBremen()
-        const isConnectionBorked = delay > 0 ? true : false
-        let mailRes = await sendMail(mailerConfig, isConnectionBorked)
+        // const delay = await connectionGetBremen()
+        // const isConnectionBorked = delay > 0 ? true : false
+        // let mailRes = await sendMail(mailerConfig, isConnectionBorked)
     });
 })
