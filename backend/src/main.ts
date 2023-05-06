@@ -90,7 +90,7 @@ fastify.listen({ port: 8080 }, async () => {
     },
         formatter = new Intl.DateTimeFormat([], optionsIntl);
 
-    const date = formatter.format(new Date());
+    const date = formatter.formatToParts(new Date());
     console.log(date)
     const config = await loadConfig('config_default.yaml')
     const mailerConfig = loadMailerConfig(config)
