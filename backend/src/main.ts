@@ -79,19 +79,6 @@ fastify.listen({ port: 8080 }, async () => {
     const scheduledJobs = new Array()
     console.log(Date.now())
     // create the job
-    let optionsIntl: Intl.DateTimeFormatOptions = {
-        timeZone: 'Europe/Berlin',
-        year: 'numeric',
-        month: 'numeric',
-        day: 'numeric',
-        hour: 'numeric',
-        minute: 'numeric',
-        second: 'numeric',
-    },
-        formatter = new Intl.DateTimeFormat([], optionsIntl);
-
-    const date = formatter.formatToParts(new Date());
-    console.log(date)
     const config = await loadConfig('config_default.yaml')
     const mailerConfig = loadMailerConfig(config)
     const job = schedule.scheduleJob(`15 * * * * *`, async function () {
