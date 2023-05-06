@@ -37,7 +37,6 @@ export const connectionGetBremen = async (): Promise<number> => {
         second: 'numeric',
     }
     const formatter = new Intl.DateTimeFormat([], optionsIntl);
-
     const date = formatter.formatToParts(new Date());
     console.log(date)
     const config = await loadConfig('config_default.yaml')
