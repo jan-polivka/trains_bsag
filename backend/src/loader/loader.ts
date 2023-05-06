@@ -27,6 +27,19 @@ export async function connectionGet(): Promise<Connections> {
 }
 
 export const connectionGetBremen = async (): Promise<number> => {
+    let optionsIntl: Intl.DateTimeFormatOptions = {
+        timeZone: 'Europe/Berlin',
+        year: 'numeric',
+        month: 'numeric',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric',
+    }
+    const formatter = new Intl.DateTimeFormat([], optionsIntl);
+
+    const date = formatter.formatToParts(new Date());
+    console.log(date)
     const config = await loadConfig('config_default.yaml')
     const apiKey = config['api_key']
     const start = '53.16976,8.629996'
