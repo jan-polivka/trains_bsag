@@ -94,6 +94,9 @@ fastify.listen({ port: 8080 }, async () => {
     const month = date[0]
     const day = date[2]
     const year = date[4]
+    console.log(month)
+    console.log(day)
+    console.log(year)
     const config = await loadConfig('config_default.yaml')
     const mailerConfig = loadMailerConfig(config)
     const job = schedule.scheduleJob(`15 * * * * *`, async function () {
