@@ -76,7 +76,6 @@ fastify.get('/retrieve_time_string', async (req, res) => {
 
 fastify.listen({ port: 8080 }, async () => {
     console.log("doing the listen")
-    console.log(Date.now())
     let optionsIntl: Intl.DateTimeFormatOptions = {
         timeZone: 'Europe/Berlin',
         year: 'numeric',
