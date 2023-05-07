@@ -94,11 +94,6 @@ fastify.listen({ port: 8080 }, async () => {
     const mailerConfig = loadMailerConfig(config)
     const job = schedule.scheduleJob(`15 * * * * *`, async function () {
         console.log("persisted job")
-        // when the time comes:
-        // make the API call
-        // process the returned data
-        // decide what is the status
-        // send the email
         const delay = await connectionGetBremen()
         const isConnectionBorked = delay > 0 ? true : false
         let mailRes = await sendMail(mailerConfig, isConnectionBorked)
