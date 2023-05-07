@@ -76,9 +76,7 @@ fastify.get('/retrieve_time_string', async (req, res) => {
 
 fastify.listen({ port: 8080 }, async () => {
     console.log("doing the listen")
-    const scheduledJobs = new Array()
     console.log(Date.now())
-    // create the job
     let optionsIntl: Intl.DateTimeFormatOptions = {
         timeZone: 'Europe/Berlin',
         year: 'numeric',
